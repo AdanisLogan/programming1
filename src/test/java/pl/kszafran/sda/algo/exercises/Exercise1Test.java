@@ -17,4 +17,11 @@ class Exercise1Test {
         assertEquals(24, exercise.factorial(4));
         assertEquals(120, exercise.factorial(5));
     }
+
+    @Test
+    void testReverse() {
+        assertEquals(exercise.reverse("test"), "tset");
+        assertEquals(exercise.reverse(""), "");
+        assertEquals(exercise.reverse("rekurencja w małym palcu"), "uclap myłam w ajcneruker");
+    }
 }
