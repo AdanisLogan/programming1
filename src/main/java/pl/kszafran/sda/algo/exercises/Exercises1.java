@@ -28,7 +28,7 @@ public class Exercises1 {
     }
 
     /**
-     * Oblicza NWW (najmniejszą wspólną wielokrotnosć) podanych argumentów (dowolna ilość).
+     * Oblicza NWW (najmniejszą wspólną wielokrotnosć) podanych argumentów.
      *
      * (po angielsku LCM - Least Common Multiple)
      *
