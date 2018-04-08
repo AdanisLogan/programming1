@@ -1,4 +1,4 @@
-package pl.kszafran.sda.algo;
+package pl.kszafran.sda.algo.presentation;
 
 public class RecursiveGcd {
 
