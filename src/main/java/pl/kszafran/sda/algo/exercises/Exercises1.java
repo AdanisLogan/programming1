@@ -1,7 +1,7 @@
 package pl.kszafran.sda.algo.exercises;
 
 /**
- * Zaimplementuj poniższe metody z wykorzystaniem rekurencji.
+ * Zaimplementuj poniższe metody Z WYKORZYSTANIEM REKURENCJI.
  */
 public class Exercises1 {
 
@@ -38,7 +38,7 @@ public class Exercises1 {
      *
      * @throws IllegalArgumentException jeśli któryś z argument jest ujemny lub gdy nie podano żadnych argumentów
      */
-    public int lcm(int... xs) {
+    public int lcm(int... numbers) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
