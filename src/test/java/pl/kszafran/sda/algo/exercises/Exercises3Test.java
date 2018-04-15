@@ -61,6 +61,12 @@ public class Exercises3Test {
         assertEquals(Optional.of(0), exercises.indexOf(List.of("kaksi", "yksi"), "kaksi", naturalOrder()));
     }
 
+    ////////////////////////////////////////////
+    //                                        //
+    // PONIŻEJ ZADANIA DODATKOWE DLA CHĘTNYCH //
+    //                                        //
+    ////////////////////////////////////////////
+
     @Test
     void test_binarySearchRange() {
         int[] array = {3, 3, 3, 5, 7, 7, 7, 10, 10, 21};
@@ -83,5 +89,21 @@ public class Exercises3Test {
         assertTrue(range.isPresent());
         assertEquals(start, range.get().getStart());
         assertEquals(end, range.get().getEnd());
+    }
+
+    @Test
+    void test_interpolationSearch() {
+        int[] array = {-43, 2, 5, 9, 10};
+        assertEquals(0, exercises.interpolationSearch(array, -43));
+        assertEquals(1, exercises.interpolationSearch(array, 2));
+        assertEquals(2, exercises.interpolationSearch(array, 5));
+        assertEquals(3, exercises.interpolationSearch(array, 9));
+        assertEquals(4, exercises.interpolationSearch(array, 10));
+        assertEquals(-1, exercises.interpolationSearch(array, 6));
+
+        assertEquals(-1, exercises.interpolationSearch(new int[]{}, 4));
+        assertEquals(-1, exercises.interpolationSearch(new int[]{4}, 6));
+        assertEquals(0, exercises.interpolationSearch(new int[]{4}, 4));
+        assertEquals(0, exercises.interpolationSearch(new int[]{4, 5}, 4));
     }
 }

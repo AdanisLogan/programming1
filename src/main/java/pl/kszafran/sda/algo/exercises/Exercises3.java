@@ -48,6 +48,16 @@ public class Exercises3 {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    /**
+     * Wyszukuje element o wartości value w podanej POSORTOWANEJ tablicy i zwraca jego indeks.
+     * Zwraca -1 jeśli element nie znajduje się w tablicy.
+     *
+     * Uwaga: należy zastosować wyszukiwanie interpolacyjne (interpolation search).
+     */
+    public int interpolationSearch(int[] array, int value) {
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
+
     public class IntRange {
 
         private final int start;

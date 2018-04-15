@@ -24,15 +24,15 @@ public class Solutions3 extends Exercises3 {
             return -1;
         }
 
-        int left = 0;
-        int right = array.length - 1;
+        int low = 0;
+        int high = array.length - 1;
 
-        while (left <= right) {
-            int mid = (left + right) >>> 1;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
             if (array[mid] > value) {
-                right = mid - 1;
+                high = mid - 1;
             } else if (array[mid] < value) {
-                left = mid + 1;
+                low = mid + 1;
             } else {
                 return mid;
             }
@@ -46,15 +46,15 @@ public class Solutions3 extends Exercises3 {
             return Optional.empty();
         }
 
-        int left = 0;
-        int right = list.size() - 1;
+        int low = 0;
+        int high = list.size() - 1;
 
-        while (left <= right) {
-            int mid = (left + right) >>> 1;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
             if (comparator.compare(list.get(mid), value) > 0) {
-                right = mid - 1;
+                high = mid - 1;
             } else if (comparator.compare(list.get(mid), value) < 0) {
-                left = mid + 1;
+                low = mid + 1;
             } else {
                 return Optional.of(mid);
             }
@@ -75,24 +75,29 @@ public class Solutions3 extends Exercises3 {
             return -1;
         }
 
-        int left = 0;
-        int right = array.length - 1;
+        int low = 0;
+        int high = array.length - 1;
 
-        while (left <= right) {
-            int mid = (left + right) >>> 1;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
             if (array[mid] > value) {
-                right = mid - 1;
+                high = mid - 1;
             } else if (array[mid] < value) {
-                left = mid + 1;
+                low = mid + 1;
             } else if (boundary == Boundary.START && mid > 0 && array[mid - 1] == array[mid]) {
-                right = mid - 1;
+                high = mid - 1;
             } else if (boundary == Boundary.END && mid < array.length - 1 && array[mid + 1] == array[mid]) {
-                left = mid + 1;
+                low = mid + 1;
             } else {
                 return mid;
             }
         }
         return -1;
+    }
+
+    @Override
+    public int interpolationSearch(int[] array, int value) {
+        throw new UnsupportedOperationException("TODO");
     }
 
     private enum Boundary {
