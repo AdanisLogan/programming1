@@ -1,11 +1,11 @@
 package pl.kszafran.sda.algo.solutions;
 
-import pl.kszafran.sda.algo.exercises.ExercisesXxxLinkedList;
+import pl.kszafran.sda.algo.exercises.Exercises4;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class SolutionsXxxLinkedList extends ExercisesXxxLinkedList {
+public class Solutions4 extends Exercises4 {
 
     @Override
     public <T> LinkedList<T> createList(T... elements) {

@@ -4,11 +4,11 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Zaimplementuj poniższe metody operujące na liście pojedynczo wiązanej.
+ * Zaimplementuj poniższe metody operujące na liście wiązanej jednokierunkowej.
  *
  * Uwaga: nie musisz implementować metod w takiej kolejności w jakiej są zadeklarowane.
  */
-public class ExercisesXxxLinkedList {
+public class Exercises4 {
 
     /**
      * Tworzy nową listę zawierającą podane elementy.
@@ -170,6 +170,12 @@ public class ExercisesXxxLinkedList {
         public void removeLast() {
             throw new UnsupportedOperationException("Not implemented yet");
         }
+
+        ////////////////////////////////////////////
+        //                                        //
+        // PONIŻEJ ZADANIA DODATKOWE DLA CHĘTNYCH //
+        //                                        //
+        ////////////////////////////////////////////
 
         @Override
         public Iterator<T> iterator() {

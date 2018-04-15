@@ -1,16 +1,16 @@
 package pl.kszafran.sda.algo.exercises;
 
 import org.junit.jupiter.api.Test;
-import pl.kszafran.sda.algo.exercises.ExercisesXxxLinkedList.LinkedList;
+import pl.kszafran.sda.algo.exercises.Exercises4.LinkedList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ExercisesXxxLinkedListTest {
+public class Exercises4Test {
 
-    private ExercisesXxxLinkedList exercises = new ExercisesXxxLinkedList();
+    private Exercises4 exercises = new Exercises4();
 
     @Test
     void test_isEmpty() {
@@ -56,7 +56,7 @@ public class ExercisesXxxLinkedListTest {
         list.clear();
         assertTrue(list.isEmpty());
 
-        exercises.createList().clear(); // pusta lista, nie powoduje wyjątku
+        exercises.createList().clear(); // pusta lista nie powoduje wyjątku
     }
 
     @Test
