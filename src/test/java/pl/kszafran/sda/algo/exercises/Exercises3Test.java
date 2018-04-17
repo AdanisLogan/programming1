@@ -2,7 +2,6 @@ package pl.kszafran.sda.algo.exercises;
 
 import org.junit.jupiter.api.Test;
 import pl.kszafran.sda.algo.exercises.Exercises3.IntRange;
-import pl.kszafran.sda.algo.solutions.Solutions3;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Exercises3Test {
 
-    private Exercises3 exercises = new Solutions3();
+    private Exercises3 exercises = new Exercises3();
 
     @Test
     void test_linearSearch() {

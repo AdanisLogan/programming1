@@ -97,7 +97,24 @@ public class Solutions3 extends Exercises3 {
 
     @Override
     public int interpolationSearch(int[] array, int value) {
-        throw new UnsupportedOperationException("TODO");
+        if (array.length == 0) {
+            return -1;
+        }
+
+        int low = 0;
+        int high = array.length - 1;
+
+        while (low < high && value >= array[low] && value <= array[high]) {
+            int mid = low + (high - low) * (value - array[low]) / (array[high] - array[low]);
+            if (array[mid] > value) {
+                high = mid - 1;
+            } else if (array[mid] < value) {
+                low = mid + 1;
+            } else {
+                return mid;
+            }
+        }
+        return value == array[low] ? low : -1;
     }
 
     private enum Boundary {

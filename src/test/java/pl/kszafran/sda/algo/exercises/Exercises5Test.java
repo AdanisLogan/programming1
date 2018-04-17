@@ -2,7 +2,6 @@ package pl.kszafran.sda.algo.exercises;
 
 import org.junit.jupiter.api.Test;
 import pl.kszafran.sda.algo.exercises.Exercises5.SdaQueue;
-import pl.kszafran.sda.algo.solutions.Solutions5;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -15,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Exercises5Test {
 
-    private Exercises5 exercises = new Solutions5();
+    private Exercises5 exercises = new Exercises5();
 
     @Test
     void test_balancedParens() {
