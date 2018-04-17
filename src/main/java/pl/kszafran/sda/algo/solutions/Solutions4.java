@@ -8,15 +8,15 @@ import java.util.NoSuchElementException;
 public class Solutions4 extends Exercises4 {
 
     @Override
-    public <T> LinkedList<T> createList(T... elements) {
-        return new LinkedListImpl<>(elements);
+    public <T> SdaList<T> createList(T... elements) {
+        return new SdaLinkedList<>(elements);
     }
 
-    private static class LinkedListImpl<T> implements LinkedList<T> {
+    private static class SdaLinkedList<T> implements SdaList<T> {
 
         private Node<T> head;
 
-        public LinkedListImpl(T[] elements) {
+        public SdaLinkedList(T[] elements) {
             for (int i = elements.length - 1; i >= 0; i--) {
                 addFirst(elements[i]);
             }

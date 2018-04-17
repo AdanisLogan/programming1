@@ -5,19 +5,17 @@ import java.util.NoSuchElementException;
 
 /**
  * Zaimplementuj poniższe metody operujące na liście wiązanej jednokierunkowej.
- *
- * Uwaga: nie musisz implementować metod w takiej kolejności w jakiej są zadeklarowane.
  */
 public class Exercises4 {
 
     /**
      * Tworzy nową listę zawierającą podane elementy.
      */
-    public <T> LinkedList<T> createList(T... elements) {
-        return new LinkedListImpl<>(elements);
+    public <T> SdaList<T> createList(T... elements) {
+        return new SdaLinkedList<>(elements);
     }
 
-    public interface LinkedList<T> extends Iterable<T> {
+    public interface SdaList<T> extends Iterable<T> {
 
         /**
          * Zwraca true jeśli lista jest pusta.
@@ -113,11 +111,11 @@ public class Exercises4 {
         void removeAt(int index);
     }
 
-    private static class LinkedListImpl<T> implements LinkedList<T> {
+    private static class SdaLinkedList<T> implements SdaList<T> {
 
         private Node<T> head;
 
-        public LinkedListImpl(T[] elements) {
+        public SdaLinkedList(T[] elements) {
             throw new UnsupportedOperationException("Not implemented yet");
         }
 
