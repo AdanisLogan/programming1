@@ -58,7 +58,7 @@ public class Exercises3 {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 
-    public class IntRange {
+    public static class IntRange {
 
         private final int start;
         private final int end;

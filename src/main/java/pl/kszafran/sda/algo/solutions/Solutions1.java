@@ -2,9 +2,6 @@ package pl.kszafran.sda.algo.solutions;
 
 import pl.kszafran.sda.algo.exercises.Exercises1;
 
-/**
- * Zaimplementuj poniższe metody z wykorzystaniem rekurencji.
- */
 public class Solutions1 extends Exercises1 {
 
     @Override
