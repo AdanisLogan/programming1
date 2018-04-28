@@ -2,6 +2,8 @@ package pl.kszafran.sda.algo.exercises;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -52,5 +54,19 @@ class Exercises1Test {
         assertThrows(IllegalArgumentException.class, () -> exercises.lcm(2, -5));
         assertThrows(IllegalArgumentException.class, () -> exercises.lcm(2, 2, -5));
         assertThrows(IllegalArgumentException.class, () -> exercises.lcm(2, 2, 2, -5));
+    }
+
+    ////////////////////////////////////////////
+    //                                        //
+    // PONIŻEJ ZADANIA DODATKOWE DLA CHĘTNYCH //
+    //                                        //
+    ////////////////////////////////////////////
+
+    @Test
+    void test_permutations() {
+        assertEquals(Set.of(""), exercises.permutations(""));
+        assertEquals(Set.of("1"), exercises.permutations("1"));
+        assertEquals(Set.of("12", "21"), exercises.permutations("12"));
+        assertEquals(Set.of("123", "132", "213", "231", "312", "321"), exercises.permutations("123"));
     }
 }
