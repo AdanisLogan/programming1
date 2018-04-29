@@ -33,7 +33,7 @@ public class Solutions1 extends Exercises1 {
         return text.substring(split) + reverse(text.substring(0, split));
     }
 
-    @Override
+//    @Override
     public int lcm(int... numbers) {
         if (numbers.length == 0) {
             throw new IllegalArgumentException("At least one argument expected");
