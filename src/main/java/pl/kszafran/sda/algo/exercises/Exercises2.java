@@ -1,8 +1,10 @@
 package pl.kszafran.sda.algo.exercises;
 
 import pl.kszafran.sda.algo.exercises.sorting.IntSortingAlgorithm;
+import pl.kszafran.sda.algo.exercises.sorting.Quicksort;
 import pl.kszafran.sda.algo.exercises.sorting.SelectionSort;
 import pl.kszafran.sda.algo.exercises.sorting.SortingAlgorithm;
+import pl.kszafran.sda.algo.solutions.sorting.QuicksortSolution;
 
 import java.util.Comparator;
 
@@ -23,8 +25,8 @@ public class Exercises2 {
     }
 
     public IntSortingAlgorithm createQuicksort() {
-//        return new Quicksort();
-        throw new UnsupportedOperationException("Not implemented yet");
+        return new Quicksort();
+
     }
 
     ////////////////////////////////////////////
