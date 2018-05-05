@@ -45,6 +45,7 @@ public class Exercises3 {
             filesFinal.add(directory);
         }
 
+
         return filesFinal;
     }
 
@@ -57,3 +58,4 @@ public class Exercises3 {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
+
