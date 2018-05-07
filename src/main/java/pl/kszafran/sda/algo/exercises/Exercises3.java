@@ -14,7 +14,12 @@ public class Exercises3 {
      * Zwraca -1 jeśli element nie znajduje się w tablicy.
      */
     public int linearSearch(int[] array, int value) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == value) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -22,14 +27,42 @@ public class Exercises3 {
      * Zwraca -1 jeśli element nie znajduje się w tablicy.
      */
     public int binarySearch(int[] array, int value) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int low = 0;
+        int high = array.length - 1;
+        if (array.length < 1) {
+            return -1;
+        }
+        for (int i = 0; i < array.length; i++) {
+            int mid = (low + high) / 2;
+            if (array[mid] == value) {
+                return mid;
+            } else if (array[mid] < value) {
+                low = mid + 1;
+            } else if (array[mid] > value) {
+                high = mid;
+            }
+        }
+        return -1;
     }
 
     /**
      * Wyszukuje element o wartości value w podanej POSORTOWANEJ liście i zwraca jego indeks.
      */
     public <T> Optional<Integer> indexOf(List<T> list, T value, Comparator<T> comparator) {
-        throw new UnsupportedOperationException("Not implemented yet");
+        int low = 0;
+        int high = list.size() - 1;
+        for (int i = 0; i < list.size(); i++) {
+            int mid = (low + high) / 2;
+            if (comparator.compare(list.get(mid), value) > 0) {
+                high = mid;
+            } else {
+                if (list.get(mid) == value) {
+                    return Optional.ofNullable(mid);
+                }
+                low = mid + 1;
+            }
+        }
+        return Optional.empty();
     }
 
     ////////////////////////////////////////////
@@ -40,7 +73,7 @@ public class Exercises3 {
 
     /**
      * Wyszukuje wszystkie elementy o wartości value w podanej POSORTOWANEJ tablicy i zwraca zakres ich indeksów.
-     *
+     * <p>
      * Uwaga: istnieją dwie możliwe implementacje, jedna o stałej złożoności O(log n)
      * oraz druga, która potrafi zdegradować się do złożoności O(n) w najgorszym przypadku.
      */
@@ -51,7 +84,7 @@ public class Exercises3 {
     /**
      * Wyszukuje element o wartości value w podanej POSORTOWANEJ tablicy i zwraca jego indeks.
      * Zwraca -1 jeśli element nie znajduje się w tablicy.
-     *
+     * <p>
      * Uwaga: należy zastosować wyszukiwanie interpolacyjne (interpolation search).
      */
     public int interpolationSearch(int[] array, int value) {

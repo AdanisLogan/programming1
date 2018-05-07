@@ -116,57 +116,126 @@ public class Exercises4 {
         private Node<T> head;
 
         public SdaLinkedList(T[] elements) {
-            throw new UnsupportedOperationException("Not implemented yet");
+            for (int i = elements.length - 1; i >= 0; i--) {
+                Node<T> node = new Node<>(elements[i], head);
+                head = node;
+
+            }
         }
 
         @Override
         public boolean isEmpty() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            if (head == null) {
+                return true;
+            }
+            return false;
         }
 
         @Override
         public int size() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            int counter = 0;
+            return checkSize(head, counter);
+        }
+
+        private int checkSize(Node<T> head, int counter) {
+            if (head != null) {
+                counter = checkSize(head.next, counter + 1);
+                return counter;
+            }
+            return counter;
         }
 
         @Override
         public T getFirst() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            if (head == null) {
+                throw new java.util.NoSuchElementException();
+            }
+            return head.element;
         }
 
         @Override
         public T getLast() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            return getLastElement(head).element;
+        }
+
+        private Node<T> getLastElement(Node<T> head) {
+            if (head == null) {
+                throw new java.util.NoSuchElementException();
+            } else if (head.next == null) {
+                return head;
+            } else {
+                return getLastElement(head.next);
+            }
         }
 
         @Override
         public T get(int index) {
-            throw new UnsupportedOperationException("Not implemented yet");
+            if (getIndex(head, index).element != null) {
+                return getIndex(head, index).element;
+            } else {
+                throw new IndexOutOfBoundsException();
+            }
+        }
+
+        private Node<T> getIndex(Node<T> head, int index) {
+            if (head == null) {
+                throw new IndexOutOfBoundsException();
+            }
+            if (index == 0) {
+                return head;
+            } else if (index > 0) {
+                return getIndex(head.next, index - 1);
+            } else {
+                throw new IndexOutOfBoundsException();
+            }
         }
 
         @Override
         public void clear() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            head = null;
         }
 
         @Override
         public void addFirst(T element) {
-            throw new UnsupportedOperationException("Not implemented yet");
+            Node<T> node = new Node<>(element, head);
+            head = node;
         }
 
         @Override
         public void addLast(T element) {
-            throw new UnsupportedOperationException("Not implemented yet");
+            if (head == null) {
+                addFirst(element);
+            } else {
+                Node<T> node = getIndex(head, size() - 1);
+                node.next = new Node<>(element, null);
+            }
         }
+
 
         @Override
         public void removeFirst() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            if (head == null) {
+                throw new NoSuchElementException();
+            }
+            Node<T> node = head;
+            head = head.next;
+            node = null;
         }
 
         @Override
         public void removeLast() {
-            throw new UnsupportedOperationException("Not implemented yet");
+            if (head == null) {
+                throw new NoSuchElementException();
+            } else if (head.next == null) {
+                head = null;
+            } else {
+                Node<T> node = getIndex(head, size() - 2);
+                if (node == head) {
+                    removeFirst();
+                } else {
+                    node.next = null;
+                }
+            }
         }
 
         ////////////////////////////////////////////
@@ -197,8 +266,8 @@ public class Exercises4 {
 
         private static class Node<T> {
 
-            private final T element;
-            private final Node<T> next;
+            private T element;
+            private Node<T> next;
 
             private Node(T element, Node<T> next) {
                 this.element = element;
