@@ -2,9 +2,12 @@ package pl.kszafran.sda.algo.solutions;
 
 import pl.kszafran.sda.algo.exercises.Exercises1;
 
-/**
- * Zaimplementuj poniższe metody z wykorzystaniem rekurencji.
- */
+import java.util.Set;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toSet;
+
 public class Solutions1 extends Exercises1 {
 
     @Override
@@ -61,5 +64,20 @@ public class Solutions1 extends Exercises1 {
 
     private int gcd(int a, int b) {
         return b == 0 ? a : gcd(b, a % b);
+    }
+
+    @Override
+    public Set<String> permutations(String string) {
+        return streamPermutations(string).collect(toSet());
+    }
+
+    private Stream<String> streamPermutations(String string) {
+        if (string.isEmpty()) {
+            return Stream.of("");
+        }
+
+        return IntStream.range(0, string.length()).boxed().flatMap(i ->
+                streamPermutations(string.substring(0, i) + string.substring(i + 1))
+                        .map(subPermutation -> string.charAt(i) + subPermutation));
     }
 }

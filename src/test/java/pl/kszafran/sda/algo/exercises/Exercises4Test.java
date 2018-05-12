@@ -1,16 +1,16 @@
 package pl.kszafran.sda.algo.exercises;
 
 import org.junit.jupiter.api.Test;
-import pl.kszafran.sda.algo.exercises.ExercisesXxxLinkedList.LinkedList;
+import pl.kszafran.sda.algo.exercises.Exercises4.SdaList;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ExercisesXxxLinkedListTest {
+public class Exercises4Test {
 
-    private ExercisesXxxLinkedList exercises = new ExercisesXxxLinkedList();
+    private Exercises4 exercises = new Exercises4();
 
     @Test
     void test_isEmpty() {
@@ -41,7 +41,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_get() {
-        LinkedList<Integer> list = exercises.createList(3, 6, 1);
+        SdaList<Integer> list = exercises.createList(3, 6, 1);
         assertEquals(3, (int) list.get(0));
         assertEquals(6, (int) list.get(1));
         assertEquals(1, (int) list.get(2));
@@ -52,16 +52,16 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_clear() {
-        LinkedList<Integer> list = exercises.createList(3, 6, 1);
+        SdaList<Integer> list = exercises.createList(3, 6, 1);
         list.clear();
         assertTrue(list.isEmpty());
 
-        exercises.createList().clear(); // pusta lista, nie powoduje wyjątku
+        exercises.createList().clear(); // pusta lista nie powoduje wyjątku
     }
 
     @Test
     void test_addFirst() {
-        LinkedList<String> list = exercises.createList();
+        SdaList<String> list = exercises.createList();
         list.addFirst("yksi");
         list.addFirst("kaksi");
         list.addFirst("kolme");
@@ -73,7 +73,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_addLast() {
-        LinkedList<String> list = exercises.createList();
+        SdaList<String> list = exercises.createList();
         list.addLast("yksi");
         list.addLast("kaksi");
         list.addLast("kolme");
@@ -85,7 +85,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_removeFirst() {
-        LinkedList<Integer> list = exercises.createList(3, 9, -20);
+        SdaList<Integer> list = exercises.createList(3, 9, -20);
 
         list.removeFirst();
         assertEquals(9, (int) list.get(0));
@@ -100,7 +100,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_removeLast() {
-        LinkedList<Integer> list = exercises.createList(3, 9, -20);
+        SdaList<Integer> list = exercises.createList(3, 9, -20);
 
         list.removeLast();
         assertEquals(3, (int) list.get(0));
@@ -143,7 +143,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_setAt() {
-        LinkedList<String> list = exercises.createList("yksi", "kaksi", "kolme");
+        SdaList<String> list = exercises.createList("yksi", "kaksi", "kolme");
         list.setAt(0, "jeden"); // pierwszy indeks
         list.setAt(1, "dwa"); // środkowy indeks
         list.setAt(2, "trzy"); // ostatni indeks
@@ -157,7 +157,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_addAt() {
-        LinkedList<String> list = exercises.createList();
+        SdaList<String> list = exercises.createList();
         list.addAt(0, "kolme"); // pusta lista
         list.addAt(0, "yksi"); // pierwszy indeks
         list.addAt(1, "kaksi"); // środkowy indeks
@@ -175,7 +175,7 @@ public class ExercisesXxxLinkedListTest {
 
     @Test
     void test_removeAt() {
-        LinkedList<String> list = exercises.createList("yksi", "kaksi", "kolme", "neljä");
+        SdaList<String> list = exercises.createList("yksi", "kaksi", "kolme", "neljä");
 
         list.removeAt(1); // środkowy element
         assertEquals("yksi", list.get(0));

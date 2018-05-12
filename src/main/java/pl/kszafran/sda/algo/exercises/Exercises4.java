@@ -4,20 +4,18 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Zaimplementuj poniższe metody operujące na liście pojedynczo wiązanej.
- *
- * Uwaga: nie musisz implementować metod w takiej kolejności w jakiej są zadeklarowane.
+ * Zaimplementuj poniższe metody operujące na liście wiązanej jednokierunkowej.
  */
-public class ExercisesXxxLinkedList {
+public class Exercises4 {
 
     /**
      * Tworzy nową listę zawierającą podane elementy.
      */
-    public <T> LinkedList<T> createList(T... elements) {
-        return new LinkedListImpl<>(elements);
+    public <T> SdaList<T> createList(T... elements) {
+        return new SdaLinkedList<>(elements);
     }
 
-    public interface LinkedList<T> extends Iterable<T> {
+    public interface SdaList<T> extends Iterable<T> {
 
         /**
          * Zwraca true jeśli lista jest pusta.
@@ -113,11 +111,11 @@ public class ExercisesXxxLinkedList {
         void removeAt(int index);
     }
 
-    private static class LinkedListImpl<T> implements LinkedList<T> {
+    private static class SdaLinkedList<T> implements SdaList<T> {
 
         private Node<T> head;
 
-        public LinkedListImpl(T[] elements) {
+        public SdaLinkedList(T[] elements) {
             throw new UnsupportedOperationException("Not implemented yet");
         }
 
@@ -171,6 +169,12 @@ public class ExercisesXxxLinkedList {
             throw new UnsupportedOperationException("Not implemented yet");
         }
 
+        ////////////////////////////////////////////
+        //                                        //
+        // PONIŻEJ ZADANIA DODATKOWE DLA CHĘTNYCH //
+        //                                        //
+        ////////////////////////////////////////////
+
         @Override
         public Iterator<T> iterator() {
             throw new UnsupportedOperationException("Not implemented yet");
@@ -193,8 +197,8 @@ public class ExercisesXxxLinkedList {
 
         private static class Node<T> {
 
-            private final T element;
-            private final Node<T> next;
+            private T element;
+            private Node<T> next;
 
             private Node(T element, Node<T> next) {
                 this.element = element;

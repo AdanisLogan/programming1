@@ -1,7 +1,9 @@
 package pl.kszafran.sda.algo.exercises;
 
+import java.util.Set;
+
 /**
- * Zaimplementuj poniższe metody z wykorzystaniem rekurencji.
+ * Zaimplementuj poniższe metody Z WYKORZYSTANIEM REKURENCJI.
  */
 public class Exercises1 {
 
@@ -38,7 +40,21 @@ public class Exercises1 {
      *
      * @throws IllegalArgumentException jeśli któryś z argument jest ujemny lub gdy nie podano żadnych argumentów
      */
-    public int lcm(int... xs) {
+    public int lcm(int... numbers) {
+        throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    ////////////////////////////////////////////
+    //                                        //
+    // PONIŻEJ ZADANIA DODATKOWE DLA CHĘTNYCH //
+    //                                        //
+    ////////////////////////////////////////////
+
+    /**
+     * Zwraca wszystkie możliwe permutacje podanego ciągu (różnych) znaków.
+     * Np. dla "123" zwraca ["123", "132", "213", "231", "312", "321"].
+     */
+    public Set<String> permutations(String string) {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 }
